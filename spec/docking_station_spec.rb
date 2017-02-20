@@ -26,4 +26,8 @@ describe Docking_station do
       expect(docking_station.bikes).to eq([bike, bike, bike, bike, bike])
   end
 
+  it("should raise an error if there are no bikes in the docking station") do
+    expect{docking_station.release_bike(bike)}.to raise_error("Bike cannot be released: There are no bikes in the docking station")
+  end
+
 end

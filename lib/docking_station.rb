@@ -11,7 +11,13 @@ class Docking_station
   end
 
   def release_bike(bike)
-    @bikes.delete(bike)
+    if @bikes.empty?
+      raise "Bike cannot be released: There are no bikes in the docking station"
+    else
+      @bikes.delete(bike)
+    end 
   end
+
+
 
 end
