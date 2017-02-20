@@ -21,4 +21,9 @@ describe Docking_station do
     expect(docking_station.bikes).to eq([])
   end
 
+  it("shows the bikes that are available for use") do
+      5.times{docking_station.store_bike(bike)}
+      expect(docking_station.bikes).to eq([bike, bike, bike, bike, bike])
+  end
+
 end
