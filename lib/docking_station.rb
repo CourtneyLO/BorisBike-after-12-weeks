@@ -1,11 +1,12 @@
 class Docking_station
 
-  attr_reader :bikes
+  attr_reader :bikes, :capacity
 
   FULL_CAPACITY = 10
 
-  def initialize
+  def initialize(capacity = FULL_CAPACITY)
     @bikes = []
+    @capacity = capacity
   end
 
   def store_bike(bike)
@@ -21,7 +22,7 @@ class Docking_station
   private
 
     def at_full_capacity?
-      bikes.length >= FULL_CAPACITY
+      bikes.length >= capacity
     end
 
 
