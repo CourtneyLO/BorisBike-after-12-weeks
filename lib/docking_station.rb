@@ -10,4 +10,8 @@ class Docking_station
     @bikes.push(bike)
   end
 
+  def release_bike(bike)
+    @bikes.delete(bike)
+  end
+
 end
