@@ -14,5 +14,11 @@ describe Van do
     van.add_bike(bike)
     expect(van.broken_bikes).to eq([bike])
   end
-  
+
+  it("removes bike for bikes array") do
+    van.add_bike(bike)
+    van.deliver_bike(bike)
+    expect(van.broken_bikes).to eq([])
+  end
+
 end

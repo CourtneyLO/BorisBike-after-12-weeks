@@ -10,4 +10,8 @@ class Van
     @broken_bikes.push(bike)
   end
 
+  def deliver_bike(bike)
+    @broken_bikes.delete(bike)
+  end
+
 end
