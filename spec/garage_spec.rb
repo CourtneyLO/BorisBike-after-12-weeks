@@ -10,8 +10,14 @@ describe Garage do
     expect(garage.fix_bikes).to eq([])
   end
 
-  it("should accept bikes") do
+  it("accepts bikes but putting bike into fix_bikes array") do
     garage.accept_bike(bike)
     expect(garage.fix_bikes).to include(bike)
+  end
+
+  it("distributes bike buy deleting bike from fix_bike array") do
+    garage.accept_bike(bike)
+    garage.distribute_bike(bike)
+    expect(garage.fix_bikes).not_to include(bike)
   end
 end
