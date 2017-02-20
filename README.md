@@ -18,6 +18,11 @@ A backend application that docks and releases bikes from a docking station.
 ### User Stories
 
 ```
+As a member of the public
+So I can return bikes I've hired
+I want to dock my bike at the docking station
+```
+```
 As a person,
 So that I can use a bike,
 I'd like to get a bike from a docking station.
@@ -26,11 +31,6 @@ I'd like to get a bike from a docking station.
 As a person,
 So that I can use a good bike,
 I'd like to see if a bike is working
-```
-```
-As a member of the public
-So I can return bikes I've hired
-I want to dock my bike at the docking station
 ```
 ```
 As a member of the public
