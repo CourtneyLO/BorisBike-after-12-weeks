@@ -6,4 +6,8 @@ class Van
     @broken_bikes = []
   end
 
+  def add_bike(bike)
+    @broken_bikes.push(bike)
+  end
+
 end
