@@ -82,6 +82,7 @@ I'd like vans to collect working bikes from garages and distribute them to docki
 - Doubles
 - Keeping code dry
 - Testing raised errors
+- Default values
 
 ## Technologies
 

@@ -6,6 +6,11 @@ describe Docking_station do
 
   let(:bike) { double :bike }
 
+  before do
+    allow(bike).to receive(:update_status).with("working")
+    allow(bike).to receive(:working_status).and_return(true)
+  end
+
   it("stores a bike") do
     expect(docking_station.store_bike(bike)).to include(bike)
   end
@@ -27,9 +32,9 @@ describe Docking_station do
   end
 
 context("raise an error") do
-  
+
   it("if there are no bikes in the docking station") do
-    expect{docking_station.release_bike(bike)}.to raise_error("Bike cannot be released: There are no bikes in the docking station")
+    expect{docking_station.release_bike(bike)}.to raise_error("Bike cannot be released: There are no working bikes in the docking station")
   end
 
   it("if store_bike is called and docking station is fill to capacity") do
@@ -45,6 +50,19 @@ context("#capacity") do
   it("allows for full capacity limited to be changed") do
     expect(docking_station.capacity).to eq(20)
   end
+
+end
+
+context("broken bike") do
+
+  it("should not release a bike if it is broken") do
+    allow(bike).to receive(:update_status).with("broken").and_return(false)
+    allow(bike).to receive(:working_status).and_return(false)
+    docking_station.store_bike(bike, "broken")
+    docking_station.release_bike(bike)
+    expect(docking_station.bikes).to include(bike)
+  end
+
 
 end
 
