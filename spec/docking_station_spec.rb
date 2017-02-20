@@ -30,4 +30,9 @@ describe Docking_station do
     expect{docking_station.release_bike(bike)}.to raise_error("Bike cannot be released: There are no bikes in the docking station")
   end
 
+  it("should raise an error if store_bike is called and docking station is fill to capacity") do
+    10.times{docking_station.store_bike(bike)}
+    expect{docking_station.store_bike(bike)}.to raise_error("Bike cannot be stored: Docking station is at its full capacity")
+  end
+
 end
