@@ -27,6 +27,7 @@ describe Docking_station do
   end
 
 context("raise an error") do
+  
   it("if there are no bikes in the docking station") do
     expect{docking_station.release_bike(bike)}.to raise_error("Bike cannot be released: There are no bikes in the docking station")
   end
@@ -41,7 +42,7 @@ context("#capacity") do
 
   subject(:docking_station) { described_class.new(20) }
 
-  it("allows for full capacity limited to be changed to be changed") do
+  it("allows for full capacity limited to be changed") do
     expect(docking_station.capacity).to eq(20)
   end
 
